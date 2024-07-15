@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PageTitle from './components/page-title';
+import PersonalInformation from './components/personal-information';
 
 const AccountOverviewContainer = styled.div`
   height: 100%;
@@ -27,12 +28,17 @@ const DashboardContainer = styled.div`
 `;
 
 const AccountOverview = ({data}) => {
-  console.log(data);
+  const { supportContact } = data;
 
   return (
     <AccountOverviewContainer>
       <HeaderContainer>
         <PageTitle />
+        <PersonalInformation
+          name={supportContact.name}
+          email={supportContact.email}
+          contactNumber={supportContact.phone}
+        />
       </HeaderContainer>
       <DashboardContainer/>
     </AccountOverviewContainer>
