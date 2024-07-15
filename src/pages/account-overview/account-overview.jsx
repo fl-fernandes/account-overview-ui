@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PageTitle from './components/page-title';
 
 const AccountOverviewContainer = styled.div`
   height: 100%;
@@ -17,8 +18,8 @@ const HeaderContainer = styled.div`
   grid-area: header;
 
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-areas: title, personal-info;
+  grid-template-columns: 3fr 4fr;
+  grid-template-areas: 'title personal-info';
 `;
 
 const DashboardContainer = styled.div`
@@ -30,7 +31,9 @@ const AccountOverview = ({data}) => {
 
   return (
     <AccountOverviewContainer>
-      <HeaderContainer/>
+      <HeaderContainer>
+        <PageTitle />
+      </HeaderContainer>
       <DashboardContainer/>
     </AccountOverviewContainer>
   )
