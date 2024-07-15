@@ -1,5 +1,5 @@
 import './app.css';
-import AccountOverview from './account-overview';
+import AccountOverview from './pages/account-overview/account-overview';
 
 function App() {
   const accountOverviewStub = {
