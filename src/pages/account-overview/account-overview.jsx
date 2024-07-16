@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const AccountOverviewContainer = styled.div`
   height: 100%;
   width: 100%;
-  background-color: lightblue;
+  background-color: #F2F2F2;
 
   display: grid;
   grid-template-rows: 2fr 3fr;
