@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PageTitle from './components/page-title';
 import PersonalInformation from './components/personal-information';
+import SalesOverview from './components/sales-overview';
+import PropTypes from 'prop-types';
 
 const AccountOverviewContainer = styled.div`
   height: 100%;
@@ -12,7 +14,7 @@ const AccountOverviewContainer = styled.div`
   grid-template-rows: 2fr 3fr;
   grid-template-areas: 
     'header'
-    'dashboard';
+    'sales-overview';
 `;
 
 const HeaderContainer = styled.div`
@@ -23,12 +25,12 @@ const HeaderContainer = styled.div`
   grid-template-areas: 'title personal-info';
 `;
 
-const DashboardContainer = styled.div`
-  grid-area: dashboard;
+const SalesOverviewContainer = styled.div`
+  grid-area: sales-overview;
 `;
 
-const AccountOverview = ({data}) => {
-  const { supportContact } = data;
+const AccountOverview = ({ data }) => {
+  const { supportContact, salesOverview } = data;
 
   return (
     <AccountOverviewContainer>
@@ -40,9 +42,32 @@ const AccountOverview = ({data}) => {
           contactNumber={supportContact.phone}
         />
       </HeaderContainer>
-      <DashboardContainer/>
+      <SalesOverviewContainer>
+        <SalesOverview
+          successfulUploads={salesOverview.successfulUploads}
+          uploadsAttempted={salesOverview.uploadsAttempted}
+          linesSaved={salesOverview.linesSaved}
+          linesAttempted={salesOverview.linesAttempted}
+        />
+      </SalesOverviewContainer>
     </AccountOverviewContainer>
   )
+}
+
+AccountOverview.propTypes = {
+  data: PropTypes.objectOf(() => ({
+    supportContact: PropTypes.objectOf(() => ({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
+    })).isRequired,
+    salesOverview: PropTypes.objectOf(() => ({
+      successfulUploads: PropTypes.number.isRequired,
+      uploadsAttempted: PropTypes.number.isRequired,
+      linesSaved: PropTypes.number.isRequired,
+      linesAttempted: PropTypes.number.isRequired,
+    })).isRequired,
+  })).isRequired,
 }
 
 export default AccountOverview;

@@ -9,11 +9,10 @@ function App() {
       phone: '020 3362 4208',
     },
     salesOverview: {
-      uploads: 8,
       successfulUploads: 3,
+      uploadsAttempted: 10,
       linesAttempted: 20,
       linesSaved: 4,
-      lastUploadDate: 1605001226079,
     }
   }
 
