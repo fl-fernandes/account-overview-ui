@@ -5,8 +5,11 @@ const PageTitleContainer = styled.div`
   grid-area: title;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 767px) { /* phone devices */
+    justify-content: center;
+  }
 `;
 
 const PageTitle = () => {

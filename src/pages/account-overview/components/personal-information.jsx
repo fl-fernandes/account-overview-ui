@@ -40,11 +40,13 @@ const Picture = styled(PicturePlaceholder)`
 const SupportData = styled.div`
   grid-area: support-data;
 
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    'support-name'
-    'support-contact-data';
+  @media screen and (min-width: 1024px) { /* except mobile devices */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'support-name'
+      'support-contact-data';
+  }
 `;
 
 const SupportNameContainer = styled.div`
@@ -59,9 +61,11 @@ const SupportNameContainer = styled.div`
 const SupportContactData = styled.div`
   grid-area: support-contact-data;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'support-email support-contact-number';
+  @media screen and (min-width: 1024px) { /* except mobile devices */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'support-email support-contact-number';
+  }
 `;
 
 const SupportEmailContainer = styled.div`

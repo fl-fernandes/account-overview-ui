@@ -21,12 +21,28 @@ const HeaderContainer = styled.div`
   grid-area: header;
 
   display: grid;
-  grid-template-columns: 3fr 4fr;
-  grid-template-areas: 'title personal-info';
+
+  @media screen and (max-width: 767px) { /* phone devices */
+    padding: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      'title'
+      'personal-info';
+  }
+
+  @media screen and (min-width: 768px) { /* except phone devices */
+    padding: 50px;
+    grid-template-columns: 3fr 4fr;
+    grid-template-areas: 'title personal-info';
+  }
 `;
 
 const SalesOverviewContainer = styled.div`
   grid-area: sales-overview;
+
+  @media screen and (min-width: 768px) { /* except phone devices */
+    padding: 50px;
+  }
 `;
 
 const AccountOverview = ({ data }) => {

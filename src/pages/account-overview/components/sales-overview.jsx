@@ -29,6 +29,7 @@ const SalesRow = styled.div`
 const SalesText = styled.h4`
   display: inline-block;
   margin-left: 10px;
+  margin-top: 0;
 `;
 
 const DetailedInfo = styled.div`
