@@ -7,6 +7,8 @@ const PageTitleContainer = styled.div`
   display: flex;
   align-items: center;
 
+  color: #5A5859;
+
   @media screen and (max-width: 767px) { /* phone devices */
     justify-content: center;
   }
@@ -14,7 +16,7 @@ const PageTitleContainer = styled.div`
 
 const PageTitle = () => {
   return (
-    <PageTitleContainer>
+    <PageTitleContainer data-testid="page-title">
       <h1>Account Overview</h1>
     </PageTitleContainer>
   );

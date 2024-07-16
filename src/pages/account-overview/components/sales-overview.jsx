@@ -84,7 +84,7 @@ const SalesOverview = ({ uploadsAttempted, successfulUploads, linesAttempted, li
   );
   
   return (
-    <SalesOverviewContainer>
+    <SalesOverviewContainer data-testid="sales-overview">
       <GeneralInfo>
         <SalesRow>
           <div>

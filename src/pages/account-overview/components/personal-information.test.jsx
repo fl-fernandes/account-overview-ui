@@ -42,4 +42,9 @@ describe('Test suit for PersonalInformation component', () => {
     const element = screen.getByText(mockSupportContactData.name.charAt(0));
     expect(element).toBeInTheDocument();
   });
+  
+  it('should render an envelope icon', () => {
+    const element = screen.getByTestId("envelope-icon");
+    expect(element).toBeInTheDocument();
+  });
 });

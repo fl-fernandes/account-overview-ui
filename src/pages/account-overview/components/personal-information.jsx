@@ -22,6 +22,7 @@ const SectionTitle = styled.div`
   align-items: flex-end;
 
   text-transform: uppercase;
+  color: #918D8D;
 `;
 
 const SupportInfo = styled.div`
@@ -31,6 +32,7 @@ const SupportInfo = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-areas: 'picture support-data';
+  color: #555555;
 `;
 
 const Picture = styled(PicturePlaceholder)`
@@ -56,6 +58,7 @@ const SupportNameContainer = styled.div`
   align-items: flex-end;
 
   font-weight: bold;
+  color: #5A5859;
 `;
 
 const SupportContactData = styled.div`
@@ -86,7 +89,7 @@ const PersonalInformation = ({ name, email, contactNumber }) => {
   }
 
   return (
-    <PersonalInformationContainer>
+    <PersonalInformationContainer data-testid="personal-info">
       <SectionTitle>
         <h2>Your feefo support contact</h2>
       </SectionTitle>
@@ -98,7 +101,12 @@ const PersonalInformation = ({ name, email, contactNumber }) => {
           </SupportNameContainer>
           <SupportContactData>
             <SupportEmailContainer>
-              <FontAwesomeIcon icon={faEnvelope} />
+              <FontAwesomeIcon
+                data-testid="envelope-icon"
+                title="email enelope"
+                icon={faEnvelope}
+                color="#555555"
+              />
               <SupportEmail>{email}</SupportEmail>
             </SupportEmailContainer>
             <SupportContactNumber>{contactNumber}</SupportContactNumber>
