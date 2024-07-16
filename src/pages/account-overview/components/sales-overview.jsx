@@ -19,6 +19,7 @@ const SalesOverviewContainer = styled.div`
 const GeneralInfo = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
+  padding: 20px;
 `;
 
 const SalesRow = styled.div`
@@ -30,6 +31,7 @@ const SalesText = styled.h4`
   display: inline-block;
   margin-left: 10px;
   margin-top: 0;
+  color: #686868;
 `;
 
 const DetailedInfo = styled.div`
@@ -38,19 +40,23 @@ const DetailedInfo = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'successful-uploads saved-lines';
+  border-top: 3px solid #F2F2F2;
 `;
 
 const SuccessfulUploads = styled.div`
   grid-area: successful-uploads;
+  padding: 20px;
+  border-right: 3px solid #F2F2F2;
 `;
 
 const SavedLines = styled.div`
   grid-area: saved-lines;
+  padding: 20px;
 `;
 
 const PercentageText = styled.span`
   display: block;
-  color: green;
+  color: #00A152;
   front-weight: bold;
   font-size: 50px;
 `;
@@ -58,6 +64,11 @@ const PercentageText = styled.span`
 const PercentageDescription = styled.span`
   font-weight: bold;
   text-transform: uppercase;
+  color: #918D8D;
+`;
+
+const UploadsAndLinesText = styled.span`
+  color: #686868;
 `;
 
 const calculatePorcentage = (value, total) => (value / total) * 100;
@@ -77,14 +88,24 @@ const SalesOverview = ({ uploadsAttempted, successfulUploads, linesAttempted, li
       <GeneralInfo>
         <SalesRow>
           <div>
-            <FontAwesomeIcon icon={faUpload} data-testid="upload-icon" title="upload" />
+            <FontAwesomeIcon
+              icon={faUpload}
+              data-testid="upload-icon"
+              title="upload"
+              color="#00A9E4"
+            />
             <SalesText>Sales</SalesText>
           </div>
-          <FontAwesomeIcon icon={faInfoCircle} data-testid="info-icon" title="info" />
+          <FontAwesomeIcon 
+            data-testid="info-icon"
+            icon={faInfoCircle}
+            title="info"
+            color="#B7B2B3"
+          />
         </SalesRow>
-        <span data-testid="uploads-and-lines-row">
+        <UploadsAndLinesText data-testid="uploads-and-lines-row">
           You had <strong>{successfulUploads} uploads</strong> and <strong>{linesSaved} lines</strong> added.
-        </span>
+        </UploadsAndLinesText>
       </GeneralInfo>
       <DetailedInfo>
         <SuccessfulUploads>
